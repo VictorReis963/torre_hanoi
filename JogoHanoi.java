@@ -1,3 +1,20 @@
+/*
+ Classe JogoHanoi
+  
+  Responsável por controlar toda a lógica do jogo Torre de Hanoi.
+  Gerencia as três torres e as interações com o usuário.
+  
+  Funções principais:
+ * - Inicializar o jogo
+ * - Exibir menu de opções
+ * - Movimentar discos entre torres (com validação)
+ * - Mostrar estado atual das torres
+ * - Reiniciar o jogo
+ * - Verificar condição de vitória
+  
+ obs: Esta classe funciona como o "controlador"/"cérebro" do sistema.
+ */
+
 import java.util.Scanner;
 
 public class JogoHanoi{
