@@ -2,6 +2,7 @@
 //chama o método principal/menu
 public class Main {
     public static void main(String[] args) {
-        JogoHanoi.iniciar();
+        JogoHanoi jogo = new JogoHanoi();
+        jogo.iniciar();
     }
 }
