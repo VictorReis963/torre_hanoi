@@ -14,3 +14,59 @@
  * - Apenas o disco do topo pode ser removido
  * - Não permite colocar disco maior sobre menor
  */
+
+
+public class Torre {
+
+    private int topoTorre;
+    private Disco e[];
+    private int tam;
+
+    public Torre(int tam) {
+        this.tam = tam;
+        this.e = new Disco[tam];
+        this.topoTorre = -1;
+    }
+
+    public boolean isEmpty() {
+        if (this.topoTorre == -1)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean isFull() {
+        if (this.topoTorre == this.tam - 1)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean push(Disco d) {
+        if (!this.isFull()) {
+            if (!this.isEmpty() && d.getSize() > this.e[this.topoTorre].getSize())
+                return false;
+            this.e[++this.topoTorre] = d;
+            return true;
+        } else
+            return false;
+    }
+
+    public Disco pop() {
+        if (!this.isEmpty())
+            return this.e[this.topoTorre--];
+        else
+            return null;
+    }
+
+    public Disco topo() {
+        if (!this.isEmpty())
+            return this.e[this.topoTorre];
+        else
+            return null;
+    }
+
+    public int sizeElements() {
+        return this.topoTorre + 1;
+    }
+}
