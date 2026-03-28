@@ -69,4 +69,26 @@ public class Torre {
     public int sizeElements() {
         return this.topoTorre + 1;
     }
+    public int[] getDiscos() {
+     int tamanho = sizeElements();
+     int[] discos = new int[tamanho];
+
+     Torre auxiliar = new Torre(this.tam);
+
+     int i = tamanho - 1;
+
+        // esvazia a pilha original
+     while (!this.isEmpty()) {
+        Disco d = this.pop();
+        discos[i--] = d.getSize();
+        auxiliar.push(d); // copia para uma torre auxiliar
+    }
+
+    // Restaura a pilha original
+    while (!auxiliar.isEmpty()) {
+        this.push(auxiliar.pop());
+    }
+
+    return discos; //retorna o aux
+}
 }
