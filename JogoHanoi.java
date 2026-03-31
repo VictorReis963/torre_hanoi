@@ -25,12 +25,12 @@ public class JogoHanoi {
     private Torre[] torres;
     private int quantidadeDiscos;
     private Scanner scanner;
-
+//Construtor do Jogo
     public JogoHanoi() {
         this.torres = new Torre[3];
         this.scanner = new Scanner(System.in);
     }
-
+//Método para iniciar o jogo e menu para verificar se o jogo deve continuar e as ações do jogador
     public void iniciar() {
         configurarJogo();
         boolean executando = true;
@@ -82,7 +82,7 @@ public class JogoHanoi {
         
         System.out.println("Jogo configurado com " + quantidadeDiscos + " discos.");
     }
-
+    //Método para mover o disco
     private void moverDisco() {
         System.out.print("Informe a torre de origem (1, 2 ou 3): ");
         int origem = scanner.nextInt() - 1; 
@@ -117,11 +117,11 @@ public class JogoHanoi {
             torres[origem].push(d);
         }
     }
-
+   //método para verificar se houve vitória do jogador
     private boolean verificarVitoria() {
         return torres[1].sizeElements() == quantidadeDiscos || torres[2].sizeElements() == quantidadeDiscos;
     }
-
+   //método para mostrar o estado atual das torres
     private void mostrarTorres() {
         System.out.println();
         for (int nivel = quantidadeDiscos - 1; nivel >= 0; nivel--) {
