@@ -1,4 +1,9 @@
 /*
+Componentes:
+Victor Reis RA:10420297
+Caroline Rhe Ree Lee RA:10264791
+Renan Dos Santos Jesus RA:10748027
+
  Classe JogoHanoi
   
   Responsável por controlar toda a lógica do jogo Torre de Hanoi.
