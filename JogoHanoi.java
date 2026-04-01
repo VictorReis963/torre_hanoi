@@ -55,7 +55,7 @@ public class JogoHanoi {
                 case 3:
                     configurarJogo();
                     break;
-                case 4:
+                case 4://encerrar
                     executando = false;
                     System.out.println("Encerrando o simulador da Torre de Hanoi...");
                     break;
