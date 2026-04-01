@@ -24,59 +24,58 @@ public class Torre {
     private int tam;
 
     public Torre(int tam) {
+        // inicializa a torre com tamanho definido
         this.tam = tam;
         this.e = new Disco[tam];
         this.topoTorre = -1;
     }
 
     public boolean isEmpty() {
-        return this.topoTorre == -1;
+        // verifica se a torre está vazia (topo = -1)
+        if (this.topoTorre == -1)
+            return true;
+        else
+            return false;
     }
 
     public boolean isFull() {
-        return this.topoTorre == this.tam - 1;
+        // verifica se a torre está cheia (topo no limite)
+        if (this.topoTorre == this.tam - 1)
+            return true;
+        else
+            return false;
     }
 
     public boolean push(Disco d) {
+        // insere um disco no topo respeitando a regra do jogo
         if (!this.isFull()) {
-            // Verifica se a torre não está vazia e se o disco é maior que o do topo
-            if (!this.isEmpty() && d.getSize() > this.e[this.topoTorre].getSize()) {
+            // não permite disco maior sobre menor
+            if (!this.isEmpty() && d.getSize() > this.e[this.topoTorre].getSize())
                 return false;
-            }
-            
             this.e[++this.topoTorre] = d;
             return true;
-        } else {
+        } else
             return false;
-        }
     }
 
     public Disco pop() {
-        if (!this.isEmpty()) {
+        // remove e retorna o disco do topo
+        if (!this.isEmpty())
             return this.e[this.topoTorre--];
-        } else {
+        else
             return null;
-        }
     }
 
     public Disco topo() {
-        if (!this.isEmpty()) {
+        // retorna o disco do topo sem remover
+        if (!this.isEmpty())
             return this.e[this.topoTorre];
-        } else {
+        else
             return null;
-        }
     }
 
     public int sizeElements() {
+        // retorna quantidade de discos na torre
         return this.topoTorre + 1;
-    }
-
-    public int[] getDiscos() {
-        int n = sizeElements();
-        int[] discos = new int[n];
-        for (int i = 0; i < n; i++) {
-            discos[i] = e[i].getSize();
-        }
-        return discos;
     }
 }
