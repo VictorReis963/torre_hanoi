@@ -74,6 +74,15 @@ public class Torre {
             return null;
     }
 
+    public int[] getDiscos() {
+        int n = sizeElements();
+        int[] discos = new int[n];
+        for (int i = 0; i < n; i++) {
+            discos[i] = e[i].getSize();
+        }
+        return discos;
+    }
+
     public int sizeElements() {
         // retorna quantidade de discos na torre
         return this.topoTorre + 1;
